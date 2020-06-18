@@ -57,11 +57,12 @@ export class Foodlist extends Component {
                  
     render() {
    
+      
         return (
                     <div >
                                <div className="center">
                                     <Navbar/> 
-                                         <FormControl style={stylej.inputbox} size="small" variant="filled" >
+                                         <FormControl style={stylej.inputbox} size="small" variant="outlined" >
                                               <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
                                                <OutlinedInput
                                                           id="outlined-adornment-amount"
