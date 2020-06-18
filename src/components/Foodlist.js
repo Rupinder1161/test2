@@ -23,7 +23,7 @@ export class Foodlist extends Component {
              }
 
                getFood(){
-                   axios.get('/food/')
+                   axios.get('https://glacial-tundra-03384.herokuapp.com/food/')
                    .then(response => {
                        
                      this.setState({ fullData: response.data })
@@ -38,13 +38,13 @@ export class Foodlist extends Component {
                  componentDidMount() {
                   
                    this.getFood()
-                   // setInterval(this.getFood,5000)
+                   setInterval(this.getFood,5000)
                   
                  }
 
-                   componentWillUnmount(){
-                     this.getFood()
-                   }
+                  //  componentWillUnmount(){
+                  //    this.getFood()
+                  //  }
                  
                  
                    getPrice = (e) =>{
