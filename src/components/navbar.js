@@ -9,19 +9,25 @@ export class Navbar extends Component {
       
     render() {
         return ( 
-            <div className="Navbar">   
-                    <div className="sec">
-                             <a href="/">Home</a>
-                             <a href="/">Breakfast</a>
-                             <a href="/">Lunch</a>
-                     </div>
-              <div className="img">Jagtari</div>
-              <div  className="sec">
-              <a href="/">Dinner</a>
-              <a href="/">About</a>
-              <a href="/">Contact US</a>
-              </div>
-            </div>
+            <div className="nav">
+                     <input type="checkbox" id="nav-check"/>
+                       <div className="nav-header">
+                           <div className="nav-title">Jagtari</div>
+                         </div>
+                     <div className="nav-btn">
+                                  <label for="nav-check">
+                                <span></span>
+                                   <span></span>
+                              <span></span>
+                                   </label>
+                            </div>
+  
+                         <div className="nav-links">
+                           <a href="#" >ADD YOUR MENU</a>
+                           <a href="#">LOGIN</a>
+                           
+                         </div>
+               </div>
            
         )
     }

@@ -62,16 +62,17 @@ export class Foodlist extends Component {
                     <div >
                                <div className="center">
                                     <Navbar/> 
+                                   <div className="centeralData"> <h1 >Enter Your Amount to Find the Best Food Around you</h1></div> 
                                          <FormControl style={stylej.inputbox} size="small" variant="outlined" >
-                                              <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
+                                            
                                                <OutlinedInput
                                                           id="outlined-adornment-amount"
                                                           // defaultValue={0}
                                                           value={this.state.Price}
                                                           onChange={this.getPrice}
                                                           startAdornment={<InputAdornment position="start">$</InputAdornment>}
-                                                          labelWidth={60}
-                                                          variant="filled"
+                                                          variant="outlined"
+                                                          type="number"
                                                           style={{background:"white",}}
                                                            />
                                           </FormControl>

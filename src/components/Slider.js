@@ -65,7 +65,7 @@ export class Slidera extends Component {
         return (
                  <div className="mainDivMiddle">
                     
-        {fullData.length === 0 ? loadingdata.map(e =><div className="middleDataDiv" >{e.name}<Skeleton width="100%" /> <Skeleton width="80%" height ="20vh"/> <Skeleton width="100%"/> <Skeleton width="100%"/> <Skeleton width="100%"/> <Skeleton width="100%"variant="text"/></div>): fullData.map(e => e.Price <= Price ?<div className="middleDataDiv"><CardA data={e.Price} venueName={e.VenueName} foodName={e.FoodName} price={Price} >e.Price</CardA></div>:Price === 0 || Price === null ? <div className="middleDataDiv"><CardA data={e.Price} venueName={e.VenueName} foodName={e.FoodName} price={Price} /></div>: "")}  
+        {fullData.length == 0 ? loadingdata.map(e =><div className="middleDataDiv" >{e.name}<Skeleton width="100%" /> <Skeleton width="80%" height ="20vh"/> <Skeleton width="100%"/> <Skeleton width="100%"/> <Skeleton width="100%"/> <Skeleton width="100%"variant="text"/></div>): fullData.map(e => e.Price <= Price ?<div className="middleDataDiv"><CardA data={e.Price} venueName={e.VenueName} foodName={e.FoodName} price={Price} >e.Price</CardA></div>:Price == 0 || Price == null ? <div className="middleDataDiv"><CardA data={e.Price} venueName={e.VenueName} foodName={e.FoodName} price={Price} /></div>: "")}  
         
                  </div>
         )
