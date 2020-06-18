@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import './middle.css'
-import Skeleton from 'react-loading-skeleton';
 import Slidera from './Slider'
 
 
@@ -18,7 +17,6 @@ export class Middle extends Component {
             //      data:this.props.data
             //  })
              const g = this.props.data
-             const Price = this.props.Price
 
              console.log(g)
         return (

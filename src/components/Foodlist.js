@@ -57,12 +57,11 @@ export class Foodlist extends Component {
                  
     render() {
    
-      const g = this.state.fullData  
         return (
                     <div >
                                <div className="center">
                                     <Navbar/> 
-                                         {/* <FormControl style={style.inputbox} size="small" variant="filled"  variant="outlined">
+                                         <FormControl style={stylej.inputbox} size="small" variant="filled" >
                                               <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
                                                <OutlinedInput
                                                           id="outlined-adornment-amount"
@@ -74,17 +73,18 @@ export class Foodlist extends Component {
                                                           variant="filled"
                                                           style={{background:"white",}}
                                                            />
-                                          </FormControl> */}
+                                          </FormControl>
                                   
                                  </div>
                                  <Middle data={this.state.fullData} Price={this.state.Price}/>
                                  {/* <Footer/> */}
             </div>
         )
+
     }
 }
 
-const style = {
+const stylej = {
     background:{
         display:"flex",
         flexFlow:"row wrap",
