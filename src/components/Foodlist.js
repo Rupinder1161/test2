@@ -62,7 +62,7 @@ export class Foodlist extends Component {
                     <div >
                                <div className="center">
                                     <Navbar/> 
-                                         <FormControl style={style.inputbox} size="small" variant="filled"  variant="outlined">
+                                         {/* <FormControl style={style.inputbox} size="small" variant="filled"  variant="outlined">
                                               <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
                                                <OutlinedInput
                                                           id="outlined-adornment-amount"
@@ -74,7 +74,7 @@ export class Foodlist extends Component {
                                                           variant="filled"
                                                           style={{background:"white",}}
                                                            />
-                                          </FormControl>
+                                          </FormControl> */}
                                   
                                  </div>
                                  <Middle data={this.state.fullData} Price={this.state.Price}/>
