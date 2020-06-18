@@ -18,7 +18,7 @@ export class Middle extends Component {
             //  })
              const g = this.props.data
 
-             console.log(g)
+             //console.log(g)
         return (
             <div className="middlesection">
                                      <Slidera data={this.props.data} Price={this.props.Price}>3</Slidera>

@@ -27,31 +27,31 @@ export class Foodlist extends Component {
                    .then(response => {
                        
                      this.setState({ fullData: response.data })
-                     console.log(response.data )
+                    // console.log(response.data )
                     
                    })
                    .catch((error) => {
-                     console.log(error);
+                    // console.log(error);
                    })
                  }
                
                  componentDidMount() {
                   
                    this.getFood()
-                   setInterval(this.getFood,5000)
+                  //  setInterval(this.getFood,5000)
                   
                  }
 
-                  //  componentWillUnmount(){
-                  //    this.getFood()
-                  //  }
+                   componentWillUnmount(){
+                     this.getFood()
+                   }
                  
                  
                    getPrice = (e) =>{
                      this.setState({
                          Price:e.target.value
                      })
-                     console.log(this.state.Price)
+                     //console.log(this.state.Price)
                       }
                       
                  

@@ -59,8 +59,8 @@ export class Slidera extends Component {
 
      const Price = this.props.Price
      const fullData = this.props.data
-   console.log(Price)
-     console.log(typeof(fullData))
+  // console.log(Price)
+   //  console.log(typeof(fullData))
       
         return (
                  <div className="mainDivMiddle">
