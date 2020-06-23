@@ -22,13 +22,14 @@ class CardA extends React.Component {
         const F = this.props.foodName
     const V = this.props.venueName
     const p = this.props.data
+    const pic = this.props.picLink
         return (
         <Card style={{backgroundColor:"#F5F5DC"}} >
                 
         <CardHeader avatar={  <Avatar aria-label="recipe" variant="rounded" style={{backgroundColor:"green",padding:"2px",color: '#fff'}} >${p}</Avatar>}  action={<IconButton aria-label="settings"> </IconButton> }
               title={ F + " from " + V  }
              subheader="September 14, 2016" />
-        <CardMedia  title="Paella dish"><img className="img-responsive" alt="hello" src="https://www.helpguide.org/wp-content/uploads/table-with-grains-vegetables-fruit-768.jpg"/></CardMedia>
+        <CardMedia  title="Paella dish"><img className="img-responsive" alt="hello" src={pic}/></CardMedia>
          <CardContent> <Typography variant="body2" color="textSecondary" component="p">This impressive paella is a perfect party dish and a fun meal to cook together with your
          guests. Add 1 cup of frozen peas along with the mussels, if you like.
          </Typography>
@@ -65,7 +66,7 @@ export class Slidera extends Component {
         return (
                  <div className="mainDivMiddle">
                     
-        {fullData.length == 0 ? loadingdata.map(e =><div className="middleDataDiv" >{e.name}<Skeleton width="100%" /> <Skeleton width="80%" height ="20vh"/> <Skeleton width="100%"/> <Skeleton width="100%"/> <Skeleton width="100%"/> <Skeleton width="100%"variant="text"/></div>): fullData.map(e => e.Price <= Price ?<div className="middleDataDiv"><CardA data={e.Price} venueName={e.VenueName} foodName={e.FoodName} price={Price} >e.Price</CardA></div>:Price == 0 || Price == null ? <div className="middleDataDiv"><CardA data={e.Price} venueName={e.VenueName} foodName={e.FoodName} price={Price} /></div>: "")}  
+        {fullData.length == 0 ? loadingdata.map(e =><div className="middleDataDiv" >{e.name}<Skeleton width="100%" /> <Skeleton width="80%" height ="20vh"/> <Skeleton width="100%"/> <Skeleton width="100%"/> <Skeleton width="100%"/> <Skeleton width="100%"variant="text"/></div>): fullData.map(e => e.Price <= Price ?<div className="middleDataDiv"><CardA data={e.Price} venueName={e.VenueName} picLink={e.Piclink} foodName={e.FoodName} price={Price} >e.Price</CardA></div>:Price == 0 || Price == null ? <div className="middleDataDiv"><CardA data={e.Price} venueName={e.VenueName} picLink={e.Piclink} foodName={e.FoodName} price={Price} /></div>: "")}  
         
                  </div>
         )
