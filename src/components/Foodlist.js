@@ -38,12 +38,11 @@ export class Foodlist extends Component {
                  componentDidMount() {
                   
                    this.getFood()
-                  //  setInterval(this.getFood,5000)
                   
                  }
 
                    componentWillUnmount(){
-                     this.getFood()
+                   
                    }
                  
                  
@@ -51,7 +50,7 @@ export class Foodlist extends Component {
                      this.setState({
                          Price:e.target.value
                      })
-                     //console.log(this.state.Price)
+                     
                       }
                       
                  

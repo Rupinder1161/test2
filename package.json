@@ -18,7 +18,9 @@
     "react-dom": "^16.13.1",
     "react-items-carousel": "^2.8.0",
     "react-loading-skeleton": "^2.1.1",
-    "react-scripts": "3.4.1"
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.1",
+    "redux": "^4.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
