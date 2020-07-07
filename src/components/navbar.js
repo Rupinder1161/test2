@@ -36,8 +36,8 @@ export class Navbar extends Component {
                             </div>
                           
                          <div className="nav-links">
-                         <Link to={"/Cart/"} >ADD YOUR MENU</Link>
-                         <Link to={"/Cart/"} >LOGIN</Link>  
+                         <Link to={"/"} >ADD YOUR MENU</Link>
+                         <Link to={"/"} >LOGIN</Link>  
                              
                          </div>
                          
