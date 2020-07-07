@@ -39,25 +39,38 @@ export class FloatFooter extends Component {
         
          const data = this.props.badgeData
         return (
+            <PopupState variant="popover" popupId="demo-popup-popover">
+      {(popupState) => (
+        <div className="floatfooter" >
           
-              
-                   <Popover
-                    isOpen={isPopoverOpen}
-                    position={'top'} // preferred position
-                         content={<div>Hi! I'm popover content.</div>}
-                         >
-                            
-                       <div className="floatfooter" style={{backgroundColor:'red'}} >
-                            
-                          <Badge className="cool" badgeContent={data.length} color="secondary" showZero>
-                           
-                           <ShoppingCartIcon/>  
-                         </Badge>     
-                         </div>
-                     </Popover>
-              )
-           
+          <div className="floatfooter" {...bindTrigger(popupState)}>
+                {console.log(data)}
+                <Badge className="cool" badgeContent={data.length} color="secondary" showZero>
+                            <ShoppingCartIcon/>  
+                          </Badge>
+                          
+            </div>
     
+          <Popover
+            {...bindPopover(popupState)}
+            anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'center',
+              }}
+              transformOrigin={{
+                vertical: 'bottom',
+                horizontal: 'center',
+              }}
+          >
+            <Box  >     
+            <Table propData={data}/>
+            </Box>
+          </Popover>
+        </div>
+      )}
+    </PopupState>
+            
+        )
     }
 }
 
