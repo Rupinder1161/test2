@@ -8,11 +8,11 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
 import Button from '@material-ui/core/Button';
-
+import { OutlinedInput } from '@material-ui/core';
 
 
 const Table= props => (
-    
+    <div  style={{display:"flex",justifyContent:"center",width:"100%",flexFlow:"column wrap",alignItems:"center"}}>
     <table>
     <caption>Order Summary</caption>
     <thead>
@@ -34,33 +34,37 @@ const Table= props => (
     
     </tbody>
   </table>
+        <Typography> Total :{props.dataPrice}</Typography>
+        <Button variant="contained" style={{width:"80%",marginTop:"20px",marginBottom:"20px"}} color="primary"  >Proceed to Checkout</Button>
+  </div>
   )
   
   
-  
-
-
-
-
-
 export class FloatFooter extends Component {
     constructor(props) {
         super(props)
     
         this.state = {
-             
+             total:0,
         }
+        this.myFunction = this.myFunction.bind(this)
     }
+    
+     myFunction(item) {  
+      this.state.total += item;
+      return this.state.total;
+    } 
     
     render() {
          const data = this.props.badgeData
+         const dataPrice = data.map(e => e.Price).reduce((a,b) => a + b, 0);
         return (
             <PopupState variant="popover" popupId="demo-popup-popover">
       {(popupState) => (
         <div className="floatfooter" >
           
           <div className="floatfooter" {...bindTrigger(popupState)}>
-                {console.log(data)}
+                {}
                 <Badge className="cool" badgeContent={data.length} color="secondary" showZero>
                             <ShoppingCartIcon/>  
                           </Badge>
@@ -79,7 +83,7 @@ export class FloatFooter extends Component {
               }}
           >
             <Box  >     
-            <Table propData={data}/>
+            <Table dataPrice={dataPrice} total={this.state.total} propData={data}/>
             </Box>
           </Popover>
         </div>
