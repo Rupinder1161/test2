@@ -9,7 +9,7 @@ import Box from '@material-ui/core/Box';
 import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
 import Button from '@material-ui/core/Button';
 import { OutlinedInput } from '@material-ui/core';
-
+import App from './Payment'
 
 const Table= props => (
     <div  style={{display:"flex",justifyContent:"center",width:"100%",flexFlow:"column wrap",alignItems:"center"}}>
@@ -35,7 +35,8 @@ const Table= props => (
     </tbody>
   </table>
         <Typography> Total :{props.dataPrice}</Typography>
-        <Button variant="contained" style={{width:"80%",marginTop:"20px",marginBottom:"20px"}} color="primary"  >Proceed to Checkout</Button>
+        <Button variant="contained" style={{width:"80%",marginTop:"20px",marginBottom:"20px"}} color="primary">Proceed to Checkout</Button>
+        <App/>
   </div>
   )
   
