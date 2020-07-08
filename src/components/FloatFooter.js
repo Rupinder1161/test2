@@ -9,9 +9,9 @@ import Box from '@material-ui/core/Box';
 import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
 import Button from '@material-ui/core/Button';
 
+var data = 0;
 
-
-const Table= props => (
+const Table = props => (
     
     <table>
     <caption>Order Summary</caption>
@@ -19,7 +19,7 @@ const Table= props => (
       <tr>
         <th scope="col">Food Name</th>
         <th scope="col">Venue Name</th>
-        <th scope="col">Amount</th>
+        <th scope="col">Amount</th> 
         <th scope="col">Quantity</th>
       </tr>
     </thead>
@@ -33,6 +33,7 @@ const Table= props => (
             )}
     
     </tbody>
+    {data += props.propData.map(e => e.Price)}
   </table>
   )
   
@@ -41,7 +42,7 @@ const Table= props => (
 
 
 
-
+var sum = 0;
 
 export class FloatFooter extends Component {
     constructor(props) {
@@ -50,8 +51,17 @@ export class FloatFooter extends Component {
         this.state = {
              
         }
+        this.sum = this.sum.bind(this)
     }
     
+
+      sum(obj){
+          for(var i = 0; i <= obj ;i++){
+              return sum += obj[i];
+          }
+      }
+
+
     render() {
          const data = this.props.badgeData
         return (
@@ -79,7 +89,7 @@ export class FloatFooter extends Component {
               }}
           >
             <Box  >     
-            <Table propData={data}/>
+            <Table sum={this.sum} data={0} propData={data}/>
             </Box>
           </Popover>
         </div>
