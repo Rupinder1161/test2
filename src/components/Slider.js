@@ -58,7 +58,6 @@ export class Slidera extends Component {
      const Price = this.props.Price
      const fullData = this.props.data   
      const Cart = this.state.cart
-     console.log(Cart)
         return (  
         <div className="mainDivMiddle">    
         {fullData.length == 0 ? loadingdata.map(e =><div className="middleDataDiv" >{e.name}<Skeleton width="100%" /> <Skeleton width="80%" height ="20vh"/> <Skeleton width="100%"/> <Skeleton width="100%"/> <Skeleton width="100%"/> <Skeleton width="100%"variant="text"/></div>): fullData.map(e => e.Price <= Price ?<div className="middleDataDiv"><CardA data={e.Price} id={e._id} venueName={e.VenueName} picLink={e.Piclink} foodName={e.FoodName} updateCart={this.addToCartTest} price={Price} >e.Price</CardA></div>:Price == 0 || Price == null ? <div className="middleDataDiv"><CardA data={e.Price} venueName={e.VenueName} id={e._id} updateCart={this.addToCartTest} picLink={e.Piclink} foodName={e.FoodName} price={Price} /></div>: "")}  

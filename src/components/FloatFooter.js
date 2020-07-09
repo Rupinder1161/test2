@@ -8,11 +8,11 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
 import Button from '@material-ui/core/Button';
+import { OutlinedInput } from '@material-ui/core';
+import App from './Payment'
 
-var data = 0;
-
-const Table = props => (
-    
+const Table= props => (
+    <div  style={{display:"flex",justifyContent:"center",width:"100%",flexFlow:"column wrap",alignItems:"center"}}>
     <table>
     <caption>Order Summary</caption>
     <thead>
@@ -33,44 +33,39 @@ const Table = props => (
             )}
     
     </tbody>
-    {data += props.propData.map(e => e.Price)}
   </table>
+        <Typography> Total :{props.dataPrice}</Typography>
+        
+      <div style={{width:"80%"}}><App/></div>  
+  </div>
   )
   
   
-  
-
-
-
-var sum = 0;
-
 export class FloatFooter extends Component {
     constructor(props) {
         super(props)
     
         this.state = {
-             
+             total:0,
         }
-        this.sum = this.sum.bind(this)
+        this.myFunction = this.myFunction.bind(this)
     }
     
-
-      sum(obj){
-          for(var i = 0; i <= obj ;i++){
-              return sum += obj[i];
-          }
-      }
-
-
+     myFunction(item) {  
+      this.state.total += item;
+      return this.state.total;
+    } 
+    
     render() {
          const data = this.props.badgeData
+         const dataPrice = data.map(e => e.Price).reduce((a,b) => a + b, 0);
         return (
             <PopupState variant="popover" popupId="demo-popup-popover">
       {(popupState) => (
         <div className="floatfooter" >
           
           <div className="floatfooter" {...bindTrigger(popupState)}>
-                {console.log(data)}
+                {}
                 <Badge className="cool" badgeContent={data.length} color="secondary" showZero>
                             <ShoppingCartIcon/>  
                           </Badge>
@@ -89,7 +84,7 @@ export class FloatFooter extends Component {
               }}
           >
             <Box  >     
-            <Table sum={this.sum} data={0} propData={data}/>
+            <Table dataPrice={dataPrice} total={this.state.total} propData={data}/>
             </Box>
           </Popover>
         </div>
