@@ -59,14 +59,15 @@ const CheckoutForm = (props) => {
     };
    
     //done
-    await axios.post("https://glacial-tundra-03384.herokuapp.com/secret", { user }).then((res) => {
+     const j = await axios.post("http://localhost:5000/secret", { user }).then( async (res) => {
+       console.log(res)
       if (!stripe || !elements) {
-        // Stripe.js has not yet loaded.
+        // Stripe.js has not yet loaded. 
         // Make sure to disable form submission until Stripe.js has loaded.
         return;
       }
       // stripe.setMaxNetworkRetries(2);
-      const result = stripe.confirmCardPayment(`${res.data.client_secret}`, {
+      const result = await stripe.confirmCardPayment(`${res.data.client_secret}`, {
         payment_method: {
           card: elements.getElement(CardElement),
           billing_details: {
@@ -74,15 +75,19 @@ const CheckoutForm = (props) => {
           },
         },
       });
-
+      //  console.log(data)
+      console.log(result)
       if (result.error) {
         alert(result.error.message)
         console.log(result.error.message);
-      } else {
-        console.log(result);
+      } else if (result.paymentIntent.status === "succeeded") {
+        alert(`YOUR PAYMENT NO.${result.paymentIntent.id} HAS BEEN SUCCESSFULL `)
+        
       }
       
     });
+  
+
   };
 
   return (
