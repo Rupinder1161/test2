@@ -59,7 +59,7 @@ const CheckoutForm = (props) => {
     };
    
     //done
-     const j = await axios.post("http://localhost:5000/secret", { user }).then( async (res) => {
+     const j = await axios.post("https://glacial-tundra-03384.herokuapp.com/secret", { user }).then( async (res) => {
        console.log(res)
       if (!stripe || !elements) {
         // Stripe.js has not yet loaded. 
