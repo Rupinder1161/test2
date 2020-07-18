@@ -57,7 +57,8 @@ const CheckoutForm = (props) => {
     const user = {
       amount: props.totalPrice,
     };
-
+   
+    //done
     await axios.post("https://glacial-tundra-03384.herokuapp.com/secret", { user }).then((res) => {
       if (!stripe || !elements) {
         // Stripe.js has not yet loaded.
